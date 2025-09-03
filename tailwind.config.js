@@ -14,6 +14,8 @@ module.exports = {
         primary: '#4A4A4A',
         dark: '#333333',
         secondary: '#000000',
+        forecastBG: 'D03E91',
+       
       }
     },
   },

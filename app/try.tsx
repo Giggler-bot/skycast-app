@@ -6,25 +6,24 @@ import '@/global.css';
 import { useRouter } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
-  Image,
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
+    ActivityIndicator,
+    Image,
+    ImageBackground,
+    SafeAreaView,
+    ScrollView,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
 // Import API services
 import {
-  api,
-  LocationData,
-  WeatherAPIError,
-  WeatherData,
+    api,
+    LocationData,
+    WeatherAPIError,
+    WeatherData,
 } from '@/service/api';
 import { gradients } from '@/utils/gradients';
-import locationService from '@/service/api.location';
 
 export default function MainDashboard() {
   const router = useRouter();

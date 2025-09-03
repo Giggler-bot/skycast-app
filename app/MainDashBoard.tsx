@@ -143,7 +143,7 @@ export default function MainDashboard() {
     <ImageBackground
       source={images.bg}
       resizeMode="cover"
-      className="flex-1"
+      className="flex-1 w-full "
     >
       <SafeAreaView className="flex-1">
         <ScrollView className="flex-1 px-4 pt-4">
@@ -154,7 +154,7 @@ export default function MainDashboard() {
           />
 
           {loading && (
-            <View className="flex-1 justify-center items-center py-20">
+            <View className="flex-1 justify-center items-center py-20 ">
               <ActivityIndicator size="large" color="#fff" />
               <Text className="text-white mt-2">Loading weather data...</Text>
             </View>
@@ -248,12 +248,14 @@ export default function MainDashboard() {
                   })()
                 }
               />
+             
+
 
               <TouchableOpacity
-                className="bg-pink-400/80 p-4 rounded-full mt-6 mb-0"
+                className="rounded-full mt-6 mb-3 bg-pink-400/80 p-4"
                 onPress={() =>
                   router.push({
-                    pathname: '/ForeCast',
+                    pathname: '/ForecastScreen',
                     params: {
                       lat: location.coords.latitude,
                       lon: location.coords.longitude,
@@ -262,7 +264,7 @@ export default function MainDashboard() {
                   })
                 }
               >
-                <Text className="text-white text-center text-lg font-semibold mb-4">View Forecast</Text>
+                <Text className="text-secondary text-center text-lg font-semibold mb-1">View Forecast</Text>
               </TouchableOpacity>
             </>
           )}

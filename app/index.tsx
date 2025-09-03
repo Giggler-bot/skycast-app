@@ -16,14 +16,14 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 h-full ">
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
 
       {/* Background Image */}
       <ImageBackground
         source={images.bg}
         resizeMode="cover"
-        className="flex-1 items-center justify-center"
+        className="flex-1 w-full "
       >
         {/* Main content */}
         <View className="flex-1 justify-center items-center px-6">
@@ -54,14 +54,18 @@ export default function HomeScreen() {
             onPress={() => router.push('/MainDashBoard')}
             activeOpacity={0.8}
           >
-            <LinearGradient
-              colors={['#ff8a95', '#ff6b8a', '#ff4757']}
-              className="px-12 py-6 rounded-full"
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <Text className="text-black text-lg font-semibold p-5 rounded-full">Get Started</Text>
-            </LinearGradient>
+            <View className='rounded-xl'>
+              <LinearGradient
+                colors={['#ff8a95', '#ff6b8a', '#ff4757']}
+                className="px-12 py-6 rounded-full"
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+              >
+              
+                  <Text className="text-black text-2xl font-semibold p-5 ">Get Started</Text>
+                
+              </LinearGradient>
+            </View>
           </TouchableOpacity>
         </View>
       </ImageBackground>
