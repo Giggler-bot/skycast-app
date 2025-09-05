@@ -158,7 +158,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <View className="relative z-50 mb-6">
+    <View className="relative z-50 mb-6 ml-10">
       {/* Search Input Container */}
       <View className="flex-row items-center bg-white/80 p-3 rounded-full">
         {showSearch && (

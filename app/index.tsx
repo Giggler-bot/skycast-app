@@ -16,14 +16,14 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <View className="flex-1 h-full ">
-      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+    <View className="flex-1 bg-">
+      {/* <StatusBar barStyle="light-content" backgroundColor="transparent" translucent /> */}
 
       {/* Background Image */}
       <ImageBackground
         source={images.bg}
         resizeMode="cover"
-        className="flex-1 w-full "
+        className="flex-1 w-full absolute z-0 h-full"
       >
         {/* Main content */}
         <View className="flex-1 justify-center items-center px-6">

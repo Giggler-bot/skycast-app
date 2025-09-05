@@ -143,3 +143,4 @@ export async function getForecastByCoords(
     throw new WeatherAPIError('Network error while fetching forecast data');
   }
 }
+

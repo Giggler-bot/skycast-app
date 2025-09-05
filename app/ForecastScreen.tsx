@@ -1,16 +1,19 @@
-// screens/HomeScreen.tsx
+// screens/ForecastScreen.tsx
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, TouchableOpacity, Image } from 'react-native';
 import * as Location from 'expo-location';
-import Forecast from '@/components/ForeCast';
+import Forecast from "@/components/ForeCast";
 import { gradients } from '@/utils/gradients';
 import { WeatherData } from '@/service/api';
+import { images } from '@/constants/images';
+import { useRouter } from 'expo-router';
 
 export default function ForecastScreen() {
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     (async () => {
@@ -51,12 +54,28 @@ export default function ForecastScreen() {
     );
   }
 
+  // NOTE: pass weatherData as-is (may be null). Forecast component handles null safely.
   return (
-    <Forecast
-      weatherData={weatherData!} // or pass existing weatherData
-      location={location!} // we know it's not null here
-      gradient={gradients.welcome}
-    />
+    <>
+      <Forecast
+        weatherData={weatherData}
+        location={location!}
+        gradient={gradients.welcome}
+      />
+      <TouchableOpacity
+          className="absolute top-5 left-0 bg-black/50 p-3 rounded-full"
+          onPress={() => router.back()}
+      >
+        <Image
+            source={images.arrow}
+            className="w-5 h-5"
+            style={{
+              tintColor: '#fff',
+              transform: [{ rotate: '180deg' }],
+            }}
+          />
+        </TouchableOpacity>
+    </>
+
   );
 }
-

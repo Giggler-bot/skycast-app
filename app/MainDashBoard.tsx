@@ -143,7 +143,8 @@ export default function MainDashboard() {
     <ImageBackground
       source={images.bg}
       resizeMode="cover"
-      className="flex-1 w-full "
+      
+      className="flex-1 w-full"
     >
       <SafeAreaView className="flex-1">
         <ScrollView className="flex-1 px-4 pt-4">
@@ -279,7 +280,7 @@ export default function MainDashboard() {
         </ScrollView>
 
         <TouchableOpacity
-          className="absolute top-12 left-5 bg-black/50 p-3 rounded-full"
+          className="absolute top-5 left-0 bg-black/50 p-3 rounded-full"
           onPress={() => router.back()}
         >
           <Image
